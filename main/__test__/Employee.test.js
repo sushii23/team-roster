@@ -28,3 +28,9 @@ test("If you're able to get name from the method getName()", () => {
     const ne = new Employee(expectedName);
     expect(ne.getName()).toBe(expectedName);
 });
+
+test("If you're able to get name from the method getId()", () => {
+    const expectedID = 436036;
+    const ne = new Employee(expectedID);
+    expect(ne.getId()).toBe(expectedID);
+});
