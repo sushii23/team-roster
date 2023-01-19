@@ -22,3 +22,9 @@ test("if the email can be set through constructor", () => {
   const ne = new Employee("foo",0,expectedEA);
   expect(ne.email).toBe(expectedEA);
 });
+
+test("If you're able to get name from the method getName()", () => {
+    const expectedName = "Loree";
+    const ne = new Employee(expectedName);
+    expect(ne.getName()).toBe(expectedName);
+});
