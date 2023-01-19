@@ -40,3 +40,9 @@ test("If you're able to get email from the method getEmail()", () => {
     const ne = new Employee("foo",0,expectedEA);
     expect(ne.getEmail()).toBe(expectedEA);
 });
+
+test("If getRole() returns the correct employee info", () => {
+    const expectedRole = "Employee";
+    const ne =new Employee("Loree",0,"foo@foo.com");
+    expect(ne.getRole()).toBe(expectedRole);
+});
