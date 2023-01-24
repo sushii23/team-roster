@@ -3,8 +3,8 @@ const Engineer = require("../lib/Engineer");
 describe("Engineer", () => {
     it("should get a GitHub account through using the constuctor", () => {
       const expectedGh ="sush123";
-      const nen = new Engineer("foo", 0, "foo@foo.com", "sush123");
-      expect(nen.gitHub).toEqual(expectedGh);
+      const nen = new Engineer("foo", 0, "foo@foo.com", expectedGh);
+      expect(nen.github).toEqual(expectedGh);
       });
    
     it("getRole() returns the correct engineer info", () => {
