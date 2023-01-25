@@ -63,13 +63,13 @@ for (let i = 0; i < team.length; i++) {
     let employee = team[i];
     switch(employee.getRole()) {
         case "Manager":
-            html.push(generateManager(employee));
+            html.push(developManager(employee));
             break;
         case "Engineer":
-            html.push(generateEngineer(employee));
+            html.push(developEngineer(employee));
             break;
         case "Intern":
-            html.push(generateIntern(employee));
+            html.push(developIntern(employee));
             break;
   
     }
