@@ -6,7 +6,7 @@ const Intern = class extends Employee {
      this.school = school;
     }
 
-    getRole = () => "intern";
+    getRole = () => "Intern";
     getSchool = () => this.school;
 }
 
