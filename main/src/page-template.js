@@ -1,84 +1,83 @@
+const Intern = require("../lib/Intern");
 
-const makeTeam =team => {
-
-const developManager = manager => {
-    return`
+const makeTeam = (team) => {
+  const developManager = (manager) => {
+    return `
 <div class="card em-card">
     <div class="card-header">
-        <h2 class="card-title">${manager.name}</h2>
-        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.role}</h3>
+        <h2 class="card-title">${manager.getName()}</h2>
+        <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
     </div>
     <div class="card-content">
         <ul class="list-group">
-            <li class="list-group-obj">ID: ${manager.id}</li>
-            <li class="list-group-obj">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
-            <li class="list-group-obj">Office number: ${manager.officeNumber}</li>
+            <li class="list-group-obj">ID: ${manager.getId()}</li>
+            <li class="list-group-obj">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+            <li class="list-group-obj">Office number: ${manager.getOfficeNumber()}</li>
         </ul>
     </div>
 </div>
 `;
-};
+  };
 
-
-const developEngineer = engineer => {
-    return`
+  const developEngineer = (engineer) => {
+    return `
     <div class="card em-card">
         <div class="card-header">
-            <h2 class="card-title">${engineer.name}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.role}</h3>
+            <h2 class="card-title">${engineer.getName()}</h2>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${
+              engineer.role
+            }</h3>
         </div>
         <div class="card-content">
             <ul class="list-group">
-                <li class="list-group-obj">ID: ${manager.id}</li>
-                <li class="list-group-obj">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+                <li class="list-group-obj">ID: ${engineer.getId()}</li>
+                <li class="list-group-obj">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
                 <li class="list-group-obj">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a></li>
             </ul>
         </div>
     </div>
     `;
-};
+  };
 
-const developIntern = intern => {
-    return`
+  const developIntern = (intern) => {
+    return `
     <div class="card em-card">
         <div class="card-header">
-            <h2 class="card-title">${engineer.name}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${engineer.role}</h3>
+            <h2 class="card-title">${intern.getName()}</h2>
+            <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${intern.getRole()}</h3>
         </div>
         <div class="card-content">
             <ul class="list-group">
-                <li class="list-group-obj">ID: ${manager.id}</li>
-                <li class="list-group-obj">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+                <li class="list-group-obj">ID: ${intern.getId()}</li>
+                <li class="list-group-obj">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
                 <li class="list-group-obj">School: ${intern.getSchool()}</li>
             </ul>
         </div>
     </div>
-    `;  
-};
+    `;
+  };
 
-const html = [];
+  const html = [];
 
-for (let i = 0; i < team.length; i++) {
+  for (let i = 0; i < team.length; i++) {
     let employee = team[i];
-    switch(employee.getRole()) {
-        case "Manager":
-            html.push(developManager(employee));
-            break;
-        case "Engineer":
-            html.push(developEngineer(employee));
-            break;
-        case "Intern":
-            html.push(developIntern(employee));
-            break;
-  
+    switch (employee.getRole()) {
+      case "Manager":
+        html.push(developManager(employee));
+        break;
+      case "Engineer":
+        html.push(developEngineer(employee));
+        break;
+      case "Intern":
+        html.push(developIntern(employee));
+        break;
     }
-}
-return html.join("");
+  }
+  return html.join("");
 };
 
-module.exports = team => {
-
-    return `
+module.exports = (team) => {
+  return `
     <!DOCTYPE html>
 <html lang="en">
 
@@ -112,30 +111,3 @@ module.exports = team => {
 </html>
     `;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

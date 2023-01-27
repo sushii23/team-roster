@@ -59,18 +59,18 @@ async function createTeam() {
   ]);
   switch (memberChoice) {
     case "Engineer":
-      await addEngineer();
+      await developEngineer();
       break;
     case "Intern":
-      await addIntern();
+      await developIntern();
       break;
     default:
       buildTeam();
   }
 }
 
-async function addEngineer() {
-  const { engineerName, engineerId } = await inquirer.prompt([
+async function developEngineer() {
+  const { engineerName, engineerId, engineerEmail, engineerGithub } = await inquirer.prompt([
     {
       type: "input",
       name: "engineerName",
@@ -111,8 +111,8 @@ async function addEngineer() {
   await createTeam();
 }
 
-async function addIntern() {
-  const { internName, internId } = await inquirer.prompt([
+async function developIntern() {
+  const { internName, internId, internEmail, internSchool} = await inquirer.prompt([
     {
       type: "input",
       name: "internName",
