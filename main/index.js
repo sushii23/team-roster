@@ -13,7 +13,7 @@ const render = require("./src/page-template.js");
 let teamMembers = [];
 let idArray = [];
 
-console.log("Welcome! Use `npm run reset` to reset the dist/ folder\n");
+
 
 async function createManager() {
   console.log("Please build your team 👥");
